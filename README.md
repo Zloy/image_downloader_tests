@@ -14,6 +14,10 @@ Here are test cases of downloading images defined as:
 1. **background-image** or **background** property of **style sheet** rule defined in link element
 1. **lazily loaded** images appended to DOM on scrolling down the page
 
+**NOTE**: Filenames of downloaded images doesn't matter. Files are being checked by their content.
+
+## How it works
+
 Tests are built on **ImageDownloaderAdapter::Base** class which expects **options** as Hash object to be passed to constructor. ImageDownloaderAdapter has single method **run()** which downloads images and saves them to target directory.
 
 Options hash has two keys: `:url` and `:dir`
@@ -30,7 +34,6 @@ module ImageDownloaderAdapter
 end
 ```
 
-**NOTE**: Filenames of downloaded images doesn't matter. Files are being checked by their content.
 
 ## How to use
 
