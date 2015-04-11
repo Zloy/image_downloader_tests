@@ -18,6 +18,18 @@ Tests are built on **ImageDownloaderAdapter::Base** class which expects **option
 
 Options hash has two keys: `:url` and `:dir`
 
+```
+module ImageDownloaderAdapter
+  class Base
+    def initialize(options)
+    end
+
+    def run
+    end
+  end
+end
+```
+
 **NOTE**: Filenames of downloaded images doesn't matter. Files are being checked by their content.
 
 ## How to use
