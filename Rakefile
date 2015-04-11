@@ -10,9 +10,6 @@ task default: [:rubocop, :spec]
 desc 'Run specs'
 RSpec::Core::RakeTask.new do |task|
   task.pattern = '**/spec/*_spec.rb'
-  task.rspec_opts << '-r ./rspec_config'
-  task.rspec_opts << '--color'
-  task.rspec_opts << '-f documentation'
 end
 
 task test: :spec
