@@ -22,19 +22,15 @@ Options hash has two keys: `:url` and `:dir`
 
 To test your image downloader implementation:
 
-clone the repository `git clone git@github.com/Zloy/image_downloader_test.git` 
-
-define the adapter class in `lib/image_downloader_adapter/base.rb` with using your stuff
-
-add to Gemfile your dependencies
-
-`bundle`
-
-`bundle exec rake`
+1. clone the repository `git clone git@github.com/Zloy/image_downloader_test.git` 
+2. define the adapter class in `lib/image_downloader_adapter/base.rb` with using your stuff
+3. add to Gemfile your dependencies
+4. `bundle`
+5. `bundle exec rake`
 
 ## How to define ImageDownloaderAdapter::Base class
 
-You could wish to test ready to use commandline utility like **wget** or a ruby class or module, Right?
+You could wish to test ready to use commandline utility like **wget** or ruby class or a module, Right?
 
 ### In case you got a command line utility like wget
 
