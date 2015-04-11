@@ -22,7 +22,7 @@ Options hash has two keys: `:url` and `:dir`
 
 To test your image downloader implementation:
 
-1. clone the repository `git clone git@github.com/Zloy/image_downloader_test.git` 
+1. clone the repository `git clone git@github.com:Zloy/image_downloader_tests.git` 
 2. define the adapter class in `lib/image_downloader_adapter/base.rb` with using your stuff
 3. add to Gemfile your dependencies
 4. `bundle`
