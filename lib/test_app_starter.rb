@@ -1,4 +1,4 @@
-require 'helpers/test_app'
+require 'test_app'
 
 class TestAppStarter
   def initialize(port)
@@ -18,11 +18,12 @@ class TestAppStarter
   end
 
   def start
-    ENV['TEST_APP_PORT'] = @port.to_s
+    trap('SIGINT') do
+      stop
+    end
 
-    @child_pid = Process.fork do |_f|
-      require 'helpers/test_app'
-
+    @pid = Process.fork do |_f|
+      ENV['TEST_APP_PORT'] = @port.to_s
       TestApp.run!
     end
 
@@ -30,9 +31,13 @@ class TestAppStarter
   end
 
   def stop
-    return unless @child_pid
+    return unless @pid
 
-    Process.kill 'TERM', @child_pid
-    Process.wait @child_pid
+    Process.kill 'TERM', @pid
+    Process.wait @pid
+  end
+
+  def wait
+    Process.wait @pid
   end
 end

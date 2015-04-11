@@ -1,5 +1,5 @@
 require 'debugger'
-require 'helpers/test_app_starter'
+require 'test_app_starter'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -12,12 +12,6 @@ RSpec.configure do |config|
 
   config.before(:all) do
     @app = TestAppStarter.new(4567) # port
-
-    trap('SIGINT') do
-      @app.stop
-      exit(-1)
-    end
-
     @app.start
   end
 
