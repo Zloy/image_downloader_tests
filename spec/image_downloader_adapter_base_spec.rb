@@ -33,4 +33,7 @@ describe klass do
 
   xit 'should download lazily loaded elements' do
   end
+
+  xit 'should download images from html commented links to stylesheets' do
+  end
 end
