@@ -13,6 +13,19 @@ Here are test cases of downloading images defined as:
 1. **background** property defined in **style attribute** of any element
 1. **background-image** or **background** property of **style sheet** rule defined in link element
 1. **lazily loaded** images appended to DOM on scrolling down the page
+1. stylesheet rules in **html commented** stylesheet links like:
+
+```
+<!--[if lt IE 7]>
+<link type="text/css" rel="stylesheet" media="all" href="/templates/default/css/ie6.css" />
+<![endif]-->
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" media="all" href="/templates/default/css/ie7.css" />
+<![endif]-->      
+<!--[if IE 8]>
+<link type="text/css" rel="stylesheet" media="all" href="/templates/default/css/ie8.css" />
+<![endif]-->
+```
 
 **NOTE**: Filenames of downloaded images doesn't matter. Files are being checked by their content.
 
