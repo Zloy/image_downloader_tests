@@ -2,6 +2,8 @@
 
 Rspec tests for any web page image downloader implementation testing.
 
+**NOTE**: this project is not implemented *yet*
+
 Here are test cases of downloading images defined as:
 
 1. IMG tag with **src** property containing an absolute (http|https) or relative paths
