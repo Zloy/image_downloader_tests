@@ -9,10 +9,10 @@ class TestAppStarter
     "http://localhost:#{@port}"
   end
 
-  def self.process(port, dry_run = false & block)
+  def self.process(port, dry_run = false, &block)
     app = new port
     app.start unless dry_run
-    yield app.root_url
+    block.call app.root_url
   ensure
     app.stop
   end
