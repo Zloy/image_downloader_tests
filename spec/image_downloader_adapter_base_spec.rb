@@ -22,6 +22,11 @@ describe ImageDownloaderAdapter::Base do
     files.each { |file| expect(target_bank.contains? file).to be(true) }
   end
 
+  it 'should download elements with background-image property in stylesheet' do
+    file = File.join(source_dir, 'background stylesheet.png')
+    expect(target_bank.contains? file).to be(true)
+  end
+
   xit 'should download img tags with srcset in scheme http' do
   end
 
@@ -35,8 +40,5 @@ describe ImageDownloaderAdapter::Base do
   end
 
   xit 'should download elements with background property in stylesheet' do
-  end
-
-  xit 'should download elements with background-image property in stylesheet' do
   end
 end
