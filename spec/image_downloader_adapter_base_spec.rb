@@ -33,12 +33,11 @@ describe ImageDownloaderAdapter::Base do
   xit 'should download img tags with embedded images' do
   end
 
-  xit 'should download elements with background property in style attr' do
-  end
-
   xit 'should download elements with background-image property in style attr' do
   end
 
-  xit 'should download elements with background property in stylesheet' do
+  it 'should download elements with background property in style attr' do
+    file = File.join(source_dir, 'background style.png')
+    expect(target_bank.contains? file).to be(true)
   end
 end
