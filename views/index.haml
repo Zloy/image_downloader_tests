@@ -1,3 +1,16 @@
-%h1 The Home Page
-%p This is a target page to download images from
-%p Scroll down to see all images 
+.container
+  %h1 The Home Page
+  %p This is a target page to download images from
+  
+  %h2
+    :escaped
+      As <IMG> tag with normal :src attribute
+  %img{src:'/images/basic img.gif'}
+
+  %h2 Lazy images loaded on page scroll
+  %img{src:'/images/lazy image 1.png'}
+  %img{src:'/images/lazy image 2.png'}
+  %img{src:'/images/lazy image 3.png'}
+  %img{src:'/images/lazy image 4.png'}
+  %img{src:'/images/lazy image 5.png'}
+  %img{src:'/images/lazy image 6.png'}
