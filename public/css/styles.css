@@ -1,0 +1,16 @@
+.container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.container img {
+  display:block;
+  margin:auto;
+  margin-top:10px;
+}
+
+#footer {
+  background-image:url('/images/background stylesheet.png'); 
+  height: 80px;
+  width:100%;
+}
