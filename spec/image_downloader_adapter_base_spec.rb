@@ -1,10 +1,14 @@
+require 'image_bank'
+
 klass = ImageDownloaderAdapter::Base
 
 describe klass do
-  xit 'should download img tags with src in scheme http' do
-  end
+  let(:source_dir) { @source_dir }
+  let(:target_bank) { ImageBank.new(@target_dir) }
 
-  xit 'should download img tags with src in scheme http' do
+  it 'should download img tag' do
+    file = File.join(source_dir, 'basic img.gif')
+    expect(target_bank.contains? file).to be(true)
   end
 
   xit 'should download img tags with srcset in scheme http' do

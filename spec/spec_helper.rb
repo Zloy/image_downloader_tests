@@ -11,8 +11,8 @@ RSpec.configure do |config|
   end
 
   config.before(:all) do
-    @source_dir = File.expand_path '../public/images'
-    @target_dir = File.expand_path Dir.tmpdir
+    @source_dir = File.expand_path 'public/images'
+    @target_dir = File.expand_path Dir.mktmpdir
     TestAppStarter.process(4567) do |root_url|
       adapter = ImageDownloaderAdapter::Base.new(url: root_url,
                                                  dir: @target_dir)
