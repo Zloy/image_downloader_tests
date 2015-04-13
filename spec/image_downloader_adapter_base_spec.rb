@@ -1,8 +1,6 @@
 require 'image_bank'
 
-klass = ImageDownloaderAdapter::Base
-
-describe klass do
+describe ImageDownloaderAdapter::Base do
   let(:source_dir) { @source_dir }
   let(:target_bank) { ImageBank.new(@target_dir) }
 
