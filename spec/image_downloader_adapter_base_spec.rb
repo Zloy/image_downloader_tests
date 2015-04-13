@@ -10,12 +10,6 @@ describe klass do
   xit 'should download img tags with srcset in scheme http' do
   end
 
-  xit 'should download img tags with src in scheme https' do
-  end
-
-  xit 'should download img tags with srcset in scheme https' do
-  end
-
   xit 'should download img tags with embedded images' do
   end
 
@@ -32,8 +26,5 @@ describe klass do
   end
 
   xit 'should download lazily loaded elements' do
-  end
-
-  xit 'should download images from html commented links to stylesheets' do
   end
 end
