@@ -11,12 +11,17 @@ RSpec.configure do |config|
   end
 
   config.before(:all) do
-    @app = TestAppStarter.new(4567) # port
-    @app.start
+    @source_dir = File.expand_path '../public/images'
+    @target_dir = File.expand_path Dir.tmpdir
+    TestAppStarter.process(4567) do |root_url|
+      adapter = ImageDownloaderAdapter::Base.new(url: root_url,
+                                                 dir: @target_dir)
+      adapter.run
+    end
   end
 
   config.after(:all) do
-    @app.stop
+    FileUtils.rm_rf(@target_dir) if File.exist?(@target_dir)
   end
 end
 
