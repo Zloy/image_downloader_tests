@@ -13,7 +13,7 @@ Here are test cases of downloading images defined as:
 1. **lazily loaded** images appended to DOM on scrolling down the page
 1. TODO IMG tag with **srcset** property
 
-**NOTE**: Filenames of downloaded images doesn't matter. Files are being checked by their content.
+**NOTE**: Filenames of downloaded images doesn't matter. Files are checked by their content.
 
 ## How it works
 
