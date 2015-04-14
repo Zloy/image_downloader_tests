@@ -30,7 +30,9 @@ describe ImageDownloaderAdapter::Base do
   xit 'should download img tags with srcset in scheme http' do
   end
 
-  xit 'should download img tags with embedded images' do
+  it 'should download img tags with embedded images' do
+    file = File.join(source_dir, 'embedded image.png')
+    expect(target_bank.contains? file).to be(true)
   end
 
   xit 'should download elements with background-image property in style attr' do

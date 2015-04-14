@@ -1,3 +1,5 @@
+- require 'base64'
+
 .container
   %h1 The Home Page
   %p This is a target page to download images from
@@ -6,6 +8,13 @@
     :escaped
       As <IMG> tag with normal :src attribute
   %img{src:'/images/basic img.gif'}
+
+  %h2
+    :escaped
+      As <IMG> tag with Base64 emdebbed in :src attribute image
+  - image_content = File.read('public/images/embedded image.png')
+  - data = "data:image/png;base64,#{Base64.encode64(image_content)}"
+  %img{src: data}
 
   %h2 Lazy images loaded on page scroll
   %img.lazy{'data-original' => '/images/lazy image 1.png'}
