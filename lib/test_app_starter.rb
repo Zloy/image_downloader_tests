@@ -31,13 +31,10 @@ class TestAppStarter
   end
 
   def stop
-    return unless @pid
-
-    Process.kill 'TERM', @pid
-    Process.wait @pid
+    Process.kill('TERM', @pid) if @pid
   end
 
   def wait
-    Process.wait @pid
+    Process.wait @pid if @pid
   end
 end
