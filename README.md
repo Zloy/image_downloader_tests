@@ -2,23 +2,22 @@
 
 Rspec tests for any web page image downloader implementation testing.
 
-**NOTE**: this project is not implemented *yet*
-
 Here are test cases of downloading images defined as:
 
 1. IMG tag with **src** property
-1. IMG tag with **srcset** property
 1. **embedded image** with IMG tag with src property like "data:image/png;base64,iVBORw0KGg..."
 1. **background-image** property defined in **style attribute** of any element
+1. **background-image** property of **style sheet** rule
 1. **background** property defined in **style attribute** of any element
-1. **background-image** or **background** property of **style sheet** rule defined in link element
+1. **background** property of **style sheet** rule
 1. **lazily loaded** images appended to DOM on scrolling down the page
+1. TODO IMG tag with **srcset** property
 
 **NOTE**: Filenames of downloaded images doesn't matter. Files are being checked by their content.
 
 ## How it works
 
-Tests are built on **ImageDownloaderAdapter::Base** class which expects **options** as Hash object to be passed to constructor. ImageDownloaderAdapter has single method **run()** which downloads images and saves them to target directory.
+Tests are built on **ImageDownloaderAdapter::Base** class which expects **options** as Hash object to be passed to constructor. ImageDownloaderAdapter has single method **run()** which downloads images and saves them to target directory. After files are downloaded, Rspec performs few checkings of what files were not downloaded.
 
 Options hash has two keys: `:url` and `:dir`
 
@@ -82,3 +81,8 @@ module ImageDownloaderAdapter
   end
 end
 ```
+
+## TODO
+
+1. Convert this repo to a gem
+2. Make target class for tests configurable
