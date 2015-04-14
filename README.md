@@ -42,7 +42,7 @@ To test your image downloader implementation:
 2. define the adapter class in `lib/image_downloader_adapter/base.rb` with using your stuff
 3. add to Gemfile your dependencies
 4. `bundle`
-5. `bundle exec rake`
+5. `bundle exec rspec`
 
 ## How to define ImageDownloaderAdapter::Base class
 
