@@ -11,23 +11,23 @@ class TestAppStarter
 
   def self.process(port, dry_run = false, &block)
     app = new port
-    app.start unless dry_run
+    unless dry_run
+      app.start
+      sleep 1 # wait for sinatra starting up
+    end
+
     block.call app.root_url
   ensure
     app.stop
   end
 
   def start
-    trap('SIGINT') do
-      stop
-    end
+    trap('SIGINT') { stop }
 
     @pid = Process.fork do |_f|
       ENV['TEST_APP_PORT'] = @port.to_s
       TestApp.run!
     end
-
-    sleep 1 # wait for sinatra starting up
   end
 
   def stop
