@@ -1,6 +1,7 @@
 require 'image_bank'
+require 'image_downloader_adapter/fotom'
 
-describe ImageDownloaderAdapter::Base do
+describe ImageDownloaderAdapter::Fotom do
   let(:source_dir) { @source_dir }
   let(:target_bank) { ImageBank.new(@target_dir) }
 
