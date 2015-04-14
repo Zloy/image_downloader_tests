@@ -68,15 +68,20 @@ end
 
 Just like https://github.com/Fotom/image_downloader
 
+Add to Gemfile  `gem 'image_downloader', '~>0.2'`, then `bundle`
+
 ```
-require ""
+require 'image_downloader'
 
 module ImageDownloaderAdapter
   class Base
     def initialize(options)
+      @downloader = ImageDownloader::Process.new(options[:url], options[:dir])
+      @downloader.parse(:any_looks_like_image => true)
     end
     
     def run
+      @downloader.download()
     end
   end
 end
