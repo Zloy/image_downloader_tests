@@ -33,7 +33,7 @@ describe ImageDownloaderAdapter::Base do
   end
 
   it 'should download images defined with srcset' do
-    ['srcset-image1.png', 'srcset-image2.png'].each |file| do
+    ['srcset-image1.png', 'srcset-image2.png'].each do |file|
       expect(target_bank.contains? file).to be(true)
     end
   end
