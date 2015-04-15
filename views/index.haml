@@ -6,8 +6,8 @@
   
   %h2
     :escaped
-      As <IMG> tag with normal :src attribute
-  %img{src:'/images/basic img.gif'}
+      As <IMG> tag with :src and :srcset attributes
+  %img{src:'/images/basic img.gif', srcset: '/images/srcset-image1.png 1x, /images/srcset-image2.png 2x'}
 
   %h2
     :escaped

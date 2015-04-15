@@ -32,7 +32,10 @@ describe ImageDownloaderAdapter::Base do
     expect(target_bank.contains? file).to be(true)
   end
 
-  xit 'should download img tags with srcset in scheme http' do
+  it 'should download images defined with srcset' do
+    ['srcset-image1.png', 'srcset-image2.png'].each |file| do
+      expect(target_bank.contains? file).to be(true)
+    end
   end
 
   it 'should download img tags with embedded images' do
