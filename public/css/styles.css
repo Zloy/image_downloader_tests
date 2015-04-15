@@ -9,8 +9,11 @@
   margin-top:10px;
 }
 
-#footer {
-  background-image:url('/images/background stylesheet.png'); 
+#header, #footer {
   height: 80px;
   width:100%;
+}
+
+#footer {
+  background-image:url('/images/background stylesheet.png'); 
 }
