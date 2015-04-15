@@ -1,7 +1,6 @@
 require 'image_bank'
-require 'image_downloader_adapter/fotom'
 
-describe ImageDownloaderAdapter::Fotom do
+describe ImageDownloaderAdapter::Base do
   let(:source_dir) { @source_dir }
   let(:target_bank) { ImageBank.new(@target_dir) }
 
@@ -24,6 +23,11 @@ describe ImageDownloaderAdapter::Fotom do
   end
 
   it 'should download elements with background-image property in stylesheet' do
+    file = File.join(source_dir, 'background-image stylesheet.jpg')
+    expect(target_bank.contains? file).to be(true)
+  end
+
+  it 'should download elements with background property in stylesheet' do
     file = File.join(source_dir, 'background stylesheet.png')
     expect(target_bank.contains? file).to be(true)
   end
@@ -36,7 +40,9 @@ describe ImageDownloaderAdapter::Fotom do
     expect(target_bank.contains? file).to be(true)
   end
 
-  xit 'should download elements with background-image property in style attr' do
+  it 'should download elements with background-image property in style attr' do
+    file = File.join(source_dir, 'background-image style.jpg')
+    expect(target_bank.contains? file).to be(true)
   end
 
   it 'should download elements with background property in style attr' do
