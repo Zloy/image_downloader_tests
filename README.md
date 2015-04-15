@@ -6,10 +6,8 @@ Here are test cases of downloading images defined as:
 
 1. IMG tag with **src** property
 1. **embedded image** with IMG tag with src property like "data:image/png;base64,iVBORw0KGg..."
-1. **background-image** property defined in **style attribute** of any element
-1. **background-image** property of **style sheet** rule
-1. **background** property defined in **style attribute** of any element
-1. **background** property of **style sheet** rule
+1. **background** or **background-image** property defined in **style attribute** of an element
+1. **background** or **background-image** property defined in **style sheet** rule
 1. **lazily loaded** images appear on scrolling down the page
 1. IMG tag with **srcset** property
 
