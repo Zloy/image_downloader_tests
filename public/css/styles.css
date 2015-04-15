@@ -1,6 +1,7 @@
 .container {
   width: 60%;
   margin: 0 auto;
+  background:#00ff00 url("/images/background stylesheet.png") repeat fixed; 
 }
 
 .container img {
@@ -15,5 +16,5 @@
 }
 
 #footer {
-  background-image:url('/images/background stylesheet.png'); 
+  background-image:url('/images/background-image stylesheet.jpg'); 
 }
