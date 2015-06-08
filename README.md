@@ -89,3 +89,4 @@ end
 
 1. Convert this repo to a gem
 2. Make target class for tests configurable
+3. Webinspector example
