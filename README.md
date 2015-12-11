@@ -15,7 +15,9 @@ Here are test cases of downloading images defined as:
 
 ## How it works
 
-Tests are built on **ImageDownloaderAdapter::Base** class which expects **options** as Hash object to be passed to constructor. ImageDownloaderAdapter has single method **run()** which downloads images and saves them to target directory. After files are downloaded, Rspec performs few checkings of what files were not downloaded.
+Rspec launches Sinatra site with single :index page, that contains all images for all testing cases. Then Rspec executes image downloader adapter run method which actually downloads images from the page to target directory. Finally Rspec checks which files weren't downloaded and shows related spec errors or reports success.
+
+Tests are built on **ImageDownloaderAdapter::Base** class which expects **options** as Hash object to be passed to constructor. ImageDownloaderAdapter::Base has single method **run()** which downloads images and saves them to target directory. After files are downloaded, Rspec performs few checkings of what files were not downloaded.
 
 Options hash has two keys: `:url` and `:dir`
 
